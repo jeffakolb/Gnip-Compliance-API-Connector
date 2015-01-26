@@ -9,7 +9,7 @@ an API endpoint from which all compliance data related to a customer's
 account can be regularly requested. A full description of the API
 can be found at the [Gnip support site](http://support.gnip.com/apis/compliance_api/).
 While the linked documentation provides a complete description of a single query,
-this package:
+the software in this repo:
 
 * automates the query generation
 * automates the periodic submission of queries
@@ -74,14 +74,14 @@ The `run` block specifies parameters associated the actual query sent to the API
 When the `run` block is not defined or contains no parameter settings,
 the default behavior is to run 10 minute queries when the stop time of the query
 is 5 minutes behind the current (wall clock) time. 
-The stop time is effectively set to infinity.
+The overall stop time is effectively set to infinity.
 
 To set a different start or stop time several optional parameters can be specified. All date/times
 use the YYYYMMDDhhmm format. 
 
 * `start_time` - time at which to begin a continuous set of queries
 * `start_time_offset_in_seconds` - defines the start time for the initial query as an offset from the current time
-* `stop_time` - time at which to stop making queries.  query for a time interval that includes the stop time will NOT be made. The default value is effectively infinity.
+* `stop_time` - time at which to stop making queries. A query for a time interval that includes the stop time will NOT be made. The default value is effectively infinity.
 
 `start_time` and `start_time_offset_in_seconds` must not both be set. 
 
